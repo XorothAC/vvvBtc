@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CurrencyRateController;
 
 /*
@@ -20,5 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::controller(CurrencyRateController::class)->group(function() {
-    Route::get('/currencies', 'getCurrencyRates');
+    Route::get('/rates/{fsym}/{tsym}', 'getCurrencyRates');
 });
+
+Route::post('/login', [AuthController::class, 'login']);

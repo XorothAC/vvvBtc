@@ -1,33 +1,24 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@extends('layouts.app')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>BTC/LTC Exchange rates</title>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Nunito', sans-serif;
-        }
-    </style>
-</head>
+@section('content')
 
 <body class="">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid d-flex">
-            @auth
-            <a href="{{ url('/home') }}" class="nav-link">Home</a>
-            @else
-            <a href="{{ route('login') }}" class="nav-link">Log in</a>
-            <a href="{{ route('register') }}" class="nav-link">Register</a>
-            @endauth
-        </div>
-    </nav>
     <div class="">
-        <div id="example"></div>
-        <script src="{{ mix('js/app.js') }}"></script>
+        @auth
+        <div class="container text-center">
+            <div className="col">
+                <div id="currency-list" className="row"></div>
+                <div id="currency-rates" className="row"></div>
+            </div>
+        </div>
+        @else
+        <div class="container col-md-8 justify-content-center">
+            <div class="card">
+                <div class="card-header">Not authorized for use.</div>
+                <div class="card-body">Please login to get exchange rates.</div>
+            </div>
+        </div>
+        @endauth
     </div>
 </body>
-
-</html>
+@endsection
