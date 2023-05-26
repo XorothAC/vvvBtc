@@ -17,3 +17,7 @@
 4. Результаты задания:
 - Результаты задания должны быть выложены на GitHub или GitLab;
 - Должно быть записано видео с развертыванием проекта с нуля из Git + тестирование всех методов АПИ (можно просто через Postman.com или аналогичный сервис.
+
+Workable ENV: 
+CRYPTO_COMPARE_URL="https://min-api.cryptocompare.com/data/"
+CRYPTO_COMPAARE_APP_KEY=5162bd77e4aa0b11267411018943f74f23b51d028ea2e259dfa0cac7c9d2aaf5
